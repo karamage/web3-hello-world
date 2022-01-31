@@ -1,0 +1,9 @@
+{
+  "name": "greeter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "truffle": "^5.4.31"
+  }
+}
