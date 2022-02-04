@@ -5,7 +5,7 @@ const Greeter = artifacts.require("Greeter");
  * Ethereum client
  * See docs: https://www.trufflesuite.com/docs/truffle/testing/writing-tests-in-javascript
  */
-contract("Greeter", function (/* accounts */) {
+contract("Greeter", function (accounts) {
   it("should assert true", async function () {
     await Greeter.deployed();
     return assert.isTrue(true);
@@ -25,6 +25,12 @@ contract("Greeter", function (/* accounts */) {
       const greeter = await Greeter.deployed();
       const owner = await greeter.owner();
       assert(owner, "the current owner");
+    });
+    it("matches the address that originally deployed the contract", async () => {
+      const greeter = await Greeter.deployed();
+      const owner = await greeter.owner();
+      const expected = accounts[0];
+      assert.equal(owner, expected, "matches address userd to deployed contract");
     });
   });
 });

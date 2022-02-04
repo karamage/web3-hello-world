@@ -5,6 +5,10 @@ contract Greeter {
   string private _greeting = "Hello, World!";
   address private _owner;
 
+  constructor() {
+    _owner = msg.sender;
+  }
+
   function greet() external view returns (string memory) {
     return _greeting;
   }
