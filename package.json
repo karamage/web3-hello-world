@@ -5,5 +5,8 @@
   "license": "MIT",
   "devDependencies": {
     "truffle": "^5.4.31"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.5.0"
   }
 }
